@@ -3,8 +3,12 @@ import styled from 'styled-components'
 
 export const Footer: React.FC = () => {
   return(
-    <footer>
+    <FooterAll>
       <div>Copyright &copy; 2021 Suiki Sekiya</div>
-    </footer>
+    </FooterAll>
   )
 }
+
+const FooterAll = styled.footer`
+  background-color: #a1f0ae;
+`

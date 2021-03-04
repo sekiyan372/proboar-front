@@ -6,6 +6,7 @@ import { Top } from './pages/Top'
 import { New } from './pages/New'
 import { Index } from './pages/Index'
 import { Show } from './pages/Show'
+import './App.css'
 
 const App: React.FC = () => {
   return (
