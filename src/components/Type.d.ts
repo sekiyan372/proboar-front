@@ -1,6 +1,7 @@
 interface Article {
   id: number
-  artist: string
+  artist?: string
+  band?: string
 }
 
 type Post = (params: any) => void

@@ -30,7 +30,7 @@ export const Top: React.FC = () => {
       {articles.map(article => (
         <ul>
           <li key={article.id}>
-            {article.id}: {article.artist}
+            {article.artist}: {article.band}
             <button onClick={() => deleteArticle(article.id)}>削除</button>
           </li>
         </ul>

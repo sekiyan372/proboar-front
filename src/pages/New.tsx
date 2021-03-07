@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 export const New: React.FC = () => {
   // フォームの値
   const [cArticle, setCArticle] = useState<string>("")
+  const [cBand, setCBand] = useState<string>("")
 
   // ページ遷移用
   const history = useHistory()
@@ -13,7 +14,7 @@ export const New: React.FC = () => {
   // create
   const createArticle: Post = (event) => {
     axios.post('http://localhost:3001/articles',
-      {artist: cArticle}
+      {artist: cArticle, band: cBand}
     ).then(() => {
       history.push('/')   //ページ遷移
     }).catch(error => {
@@ -26,11 +27,19 @@ export const New: React.FC = () => {
     <div>
       <h2>新規投稿</h2>
       <form onSubmit={createArticle}>
+        <label>アーティスト名</label>
         <input
           type="text"
-          name="post"
+          name="postArticle"
           value={cArticle}
           onChange={event => setCArticle(event.target.value)}
+        />
+        <label>バンド名</label>
+        <input
+          type="text"
+          name="postBand"
+          value={cBand}
+          onChange={event => setCBand(event.target.value)}
         />
         <button type="submit">投稿</button>
       </form>
